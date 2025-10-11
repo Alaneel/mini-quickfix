@@ -1,0 +1,9 @@
+com/example/fix/FixExample.class
+com/example/fix/FixMessage.class
+com/example/fix/FixException.class
+com/example/fix/FixMsgType.class
+com/example/fix/FixParser.class
+com/example/fix/FixField.class
+com/example/fix/FixSession.class
+com/example/fix/FixBuilder.class
+com/example/fix/FixFieldType.class
