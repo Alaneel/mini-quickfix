@@ -1,4 +1,4 @@
-package com.example.fix;
+package com.example.fix.exception;
 
 /**
  * FIX协议相关异常

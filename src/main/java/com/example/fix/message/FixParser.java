@@ -1,4 +1,7 @@
-package com.example.fix;
+package com.example.fix.message;
+
+import com.example.fix.exception.FixException;
+import com.example.fix.types.FixFieldType;
 
 /**
  * FIX消息解析器

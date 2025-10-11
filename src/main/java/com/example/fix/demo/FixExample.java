@@ -1,9 +1,14 @@
-package com.example.fix;
+package com.example.fix.demo;
 
-import java.time.LocalDateTime;
+import com.example.fix.exception.FixException;
+import com.example.fix.message.*;
+import com.example.fix.session.FixSession;
+import com.example.fix.types.*;
 
 /**
- * FIX协议库使用示例
+ * FIX Protocol Library Usage Examples
+ *
+ * This demo class showcases the main features of the Mini QuickFIX library.
  */
 public class FixExample {
 

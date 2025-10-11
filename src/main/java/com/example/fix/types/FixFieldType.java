@@ -1,4 +1,4 @@
-package com.example.fix;
+package com.example.fix.types;
 
 /**
  * 常用FIX字段类型定义

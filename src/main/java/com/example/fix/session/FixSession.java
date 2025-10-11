@@ -1,5 +1,10 @@
-package com.example.fix;
+package com.example.fix.session;
 
+import com.example.fix.exception.FixException;
+import com.example.fix.message.FixBuilder;
+import com.example.fix.message.FixMessage;
+import com.example.fix.types.FixFieldType;
+import com.example.fix.types.FixMsgType;
 import java.time.LocalDateTime;
 import java.util.concurrent.atomic.AtomicInteger;
 

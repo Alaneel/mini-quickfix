@@ -1,5 +1,6 @@
-package com.example.fix;
+package com.example.fix.message;
 
+import com.example.fix.types.FixFieldType;
 import java.util.*;
 
 /**

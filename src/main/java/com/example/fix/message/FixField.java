@@ -1,4 +1,4 @@
-package com.example.fix;
+package com.example.fix.message;
 
 /**
  * FIX字段类,表示FIX消息中的一个tag=value对

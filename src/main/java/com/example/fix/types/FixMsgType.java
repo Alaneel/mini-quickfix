@@ -1,4 +1,4 @@
-package com.example.fix;
+package com.example.fix.types;
 
 /**
  * FIX消息类型定义
