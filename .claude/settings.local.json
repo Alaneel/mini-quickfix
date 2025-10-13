@@ -8,7 +8,8 @@
       "Bash(mvn exec:java:*)",
       "Bash(mvn:*)",
       "Bash(java:*)",
-      "Read(//Users/alanwang/.m2/repository/com/example/fix/mini-quickfix/1.0.0/**)"
+      "Read(//Users/alanwang/.m2/repository/com/example/fix/mini-quickfix/1.0.0/**)",
+      "Bash(tree:*)"
     ],
     "deny": [],
     "ask": []

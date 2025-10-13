@@ -1,0 +1,66 @@
+version: '3.8'
+
+services:
+  mini-quickfix:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: mini-quickfix:latest
+    container_name: mini-quickfix
+    ports:
+      - "9878:9878"
+    environment:
+      - JAVA_OPTS=-Xms512m -Xmx1024m
+      - FIX_SESSION_HEARTBEAT_INTERVAL=30
+      - FIX_NETWORK_PORT=9878
+    volumes:
+      - ./logs:/app/logs
+      - ./fix_store:/app/fix_store
+      - ./config/application.properties:/app/config/application.properties:ro
+    networks:
+      - fix-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9878/health"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+      start_period: 30s
+
+  # Optional: Add a monitoring stack
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - prometheus-data:/prometheus
+    networks:
+      - fix-network
+    restart: unless-stopped
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    ports:
+      - "3000:3000"
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+      - GF_USERS_ALLOW_SIGN_UP=false
+    volumes:
+      - grafana-data:/var/lib/grafana
+      - ./monitoring/grafana/dashboards:/etc/grafana/provisioning/dashboards:ro
+    networks:
+      - fix-network
+    restart: unless-stopped
+    depends_on:
+      - prometheus
+
+networks:
+  fix-network:
+    driver: bridge
+
+volumes:
+  prometheus-data:
+  grafana-data:

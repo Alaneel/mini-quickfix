@@ -46,9 +46,34 @@ bin/
 
 ### Logs ###
 *.log
+logs/
 
 ### Build artifacts ###
 *.jar
 *.war
 *.ear
 *.class
+*.tmp
+*.bak
+*.swp
+*~
+
+### FIX Store ###
+fix_demo_store/
+fix_store/
+
+### Code Coverage & Quality ###
+.sonar/
+sonar-project.properties
+dependency-check-report.html
+
+### Docker ###
+docker-compose.override.yml
+
+### Environment ###
+.env
+.env.local
+
+### Monitoring ###
+monitoring/prometheus/data/
+monitoring/grafana/data/
