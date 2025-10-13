@@ -49,7 +49,7 @@ jobs:
 
     - name: Upload test results
       if: always()
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: test-results
         path: target/surefire-reports/
@@ -94,7 +94,7 @@ jobs:
 
     - name: Upload code quality reports
       if: always()
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: code-quality-reports
         path: |
@@ -128,7 +128,7 @@ jobs:
 
     - name: Upload OWASP report
       if: always()
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: owasp-report
         path: target/dependency-check-report.html
@@ -217,7 +217,7 @@ jobs:
         cp LICENSE release/
 
     - name: Upload release artifacts
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: release-artifacts
         path: release/
